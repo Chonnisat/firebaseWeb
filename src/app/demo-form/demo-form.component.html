@@ -1,0 +1,17 @@
+<div class="container">
+  <form #demoForm="ngForm" (ngSubmit)="onSubmit(demoForm)">
+    <div class="row">
+      <div class="input-field col s12 m6 offset-m3">
+        <i class="material-icons prefix">account_circle</i>
+        <input name="code" [(ngModel)]="_demoData.code" type="text" class="validate" required ng-class="{'readOnly': _mode == 'Edit'}">
+        <label>Code</label>
+      </div>
+      <div class="input-field col s12 m6 offset-m3">
+        <i class="material-icons prefix">font_download</i>
+        <input name="name" [(ngModel)]="_demoData.name" type="text" class="validate" required>
+        <label>Name</label>
+      </div>
+      <button type="submit" class="col s10 offset-s1 m4 offset-m4 btn blue darken-3">Save</button>
+    </div>
+  </form>
+</div>

@@ -1,0 +1,29 @@
+<form #loginForm="ngForm" (ngSubmit)="onSubmit(loginForm)">
+  <input type="text" 
+  ngModel 
+  name="userId" 
+  required 
+  minlength="2"
+  maxlength="8"
+  >
+  <input type="password" [(ngModel)]="password" name="password" required>
+  <input type="submit" value="Login">
+</form>
+<div>
+  {{ loginForm.value | json}}
+  {{ loginForm.valid }}
+</div>
+<div class="row">
+<button class="btn col s12" (click)="testData()">Test Data</button>
+<button class="btn col s12" (click)="onGoogleSignIn()">Sign In With Google</button>
+<button class="btn col s12" (click)="onFacebookSignIn()">Sign In With Facebook</button>
+<button class="btn col s12" (click)="onTwitterSignIn()">Sign In With Twitter</button>
+<button class="btn col s12" (click)="onGithubSignIn()">Sign In With Github</button>
+</div>
+<div class="row">
+  <input type="text" [(ngModel)]="phoneNumber" />
+</div>
+<div id="recapt-id"></div>
+<button class="btn col s12" (click)="onRequestOtp()">Request OTP</button>
+<input type="text" [(ngModel)]="otp" />
+<button class="btn col s12" (click)="onConfirmOpt()">Confirm OTP</button>
